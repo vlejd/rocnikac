@@ -1,0 +1,29 @@
+<html>
+<head>
+<title> Rocnikac</title>
+<meta charset="utf-8">
+</head>
+<body>
+<h1> RoÄnÃ­kovÃ½ projekt</h1>
+<p>
+Å tudent: VladimÃ­r Macko (vlejd at ksp sk) <br>
+VedÃºci: Michal ForÃ­Å¡ek (misof at ksp sk)
+</p>
+<h2> TÃ©ma </h2>
+<p>AutomatickÃ© zisÅ¥ovanie, spracovanie a zobrazovanie aktuÃ¡lnych podujatÃ­ (prednÃ¡Å¡ok, proseminÃ¡rov, konferenciÃ­...) na FMFI. </p>
+
+<h2> CieÄ¾ </h2>
+<p>NapÃ­saÅ¥ nÃ¡stroj schopnÃ½ (polo)automaticky urÄovaÅ¥ relevantnÃ½, meniaci sa obsah Ä¾ubovoÄ¾nej strÃ¡nky a spracovÃ¡vaÅ¥ ho do jednotnej podoby. </p>
+
+<h2> Kroky </h2>
+<ul>
+<li> StanoviÅ¥ si predbeÅ¾nÃ© ciele a spÃ­saÅ¥ ich do milestonov s predbeÅ¾nÃ½m ÄasovÃ½m plÃ¡nom. </li>
+<li> ZÃ­skaÅ¥ prehÄ¾ad o uÅ¾ existujÃºcich dostupnÃ½ch alternatÃ­vach na rieÅ¡enie tohoto problÃ©mu.</li>
+<li> PrvÃ¡ verzia strÃ¡nky zbierajÃºca Ãºdaje neinteligentnÃ½m spÃ´sobom (regexpy, alebo inak na tvrdo) schopnÃ¡ prezentovaÅ¥ ich v nejakej forme.</li>
+<li> Verzia schopnÃ¡ zbieraÅ¥ Ãºdaje aj z neznÃ¡mich strÃ¡nok (heuristiky, machynelearning) </li>
+<li> Verzia schopnÃ¡ personalizovane zobrazovaÅ¥ dÃ´leÅ¾itÃ© novinky. </li>
+<li> volaco </li>
+</ul>
+<div> to je iny div</div>
+</body>
+</html>

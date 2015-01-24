@@ -1,0 +1,9 @@
+server: bude bezat
+	databaza webow: ako vyzerali, co sa zmenilo. ak nieco pribudlo alebo sa zmenilo, poparsuj to
+			kazdy den sa odznova pozri. parsovanie rucne: (ak som ju este nevidel, tak len ak sa daco pridalo
+
+
+stranka:
+
+
+napisat pinger:
