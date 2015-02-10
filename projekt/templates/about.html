@@ -1,0 +1,26 @@
+<head>
+    <meta charset="utf-8">
+    <title>Rocnikac</title>
+    <meta property="og:title" content="SciCurve - Understand your Field of Research." />
+</head>
+<body>
+<p>
+repo je : https://github.com/vlejd/rocnikac.git
+cele to bezi na flaskovom serveri
+staci pustit python main.py (python2)
+popri tom treba pustit pinger (ktory pinguje stranky a pozera sa, ci sa na nich nieco zmenilo)
+konkretne cd crawlers; python pinger.py
+je dvolezite to pustat z tade kvoli dakym relativnym cestam. 
+</p>
+<p>
+v priecinku crawlers je pinger. ten ma v subore list zoznam stranok, ktore ma checkovat a selector konkretnych objektov. 
+ak sa daco zmenilo, tak na tom pusti extractor. zatial ma len stranka fmph vlasny (vyparsuje co, kedy a kde sa udeje)
+ak si tam clovek prida vlastnu stranku, extractor bude default.py, ktory len vyriahne dany html kod. 
+</p>
+
+<p>
+stranky sa daju pridavat (pozor na dobry format), mazat viem len ja (treba prepisat list).
+
+na generovanie templatov je pozita jinja (flaskovy default)
+</p>
+</body>
