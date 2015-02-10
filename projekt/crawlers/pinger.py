@@ -4,29 +4,41 @@ def main():
     f = open("list",'r')
     data = f.read().strip().split('\n')
     f.close()
-    for d in data:
-      stranka,program = d.split()
-      print stranka,program
+    for i,d in enumerate(data):
+      if(len(d.strip())<1): continue
+    
+      js = json.loads(d)
+      pprint.pprint(js)
       #vyrob subor na logovanie, ak este nie je
-      if not os.path.exists("archiv/"+justchars(stranka)):
-	f = open("archiv/"+justchars(stranka),'w')
+      archiv = "archiv/"+js['seed']
+      if not os.path.exists(archiv):
+	f = open(archiv,'w')
 	f.close()
-      f = open("archiv/"+justchars(stranka),'r')
+      f = open(archiv,'r')
       text = f.read()
       f.close()
-      n_text = get_url(stranka)
-      if( text.strip() != n_text.strip()):
+      all_text = get_html(js['url'])
+      soup = BeautifulSoup(all_text).select(js['element'])
+      n_text = "".join(map(lambda x:x.prettify(),soup))
+      if( text.strip() != n_text.strip()): #debug
 	print "nieco sa zmenilo"
-	execfile(program)#poextrahuj zmenenu stranku
-	#zapis, ako teraz vyzera nova stranka
-	f = open("archiv/"+justchars(stranka),'w')
-	f.write(n_text)
-	f.close()
+	try:
+	  subprocess.call(["python", js['program'], str(i)])#poextrahuj zmenenu stranku
+	  f = open(archiv,'w')
+	  f.write(n_text)
+	  f.close()
+	  print "done"
+	except:
+	  print "extract error"
       else:
 	#nic sa nestalo
 	pass
     #trosku si otdychni
-    time.sleep(10)
+    
+    print "sleep"
+    time.sleep(10) #debug
+    print "end of sleep"
+    
     #time.sleep(60*60*24)
 
 if __name__ == '__main__':

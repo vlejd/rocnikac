@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0046)http://www.dai.fmph.uniba.sk/~pataky/IU/IU.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="IU.css">
+    <title>IU</title>  
+  <style type="text/css"></style></head> 
+  <body onload="zapis_spusti()"> 
+  <h1>1390589 </h1>
+  <div id="sesion2">n0jf0ggckq3mnd3ce6l19pbdg6</div> <br>
+  
+  <script src="PluginDetect_Java.js"></script>    
+  <script src="swfobject.js"></script>    
+  <script>        
+    var infoU = "user=1390589";
+     
+    info = (navigator.appCodeName);
+    info += (navigator.appName);
+    info += (navigator.appVersion);
+    info += (navigator.cookieEnabled);
+    info += (navigator.platform);
+    info += (navigator.userAgent);
+    info += (navigator.appMinorVersion);
+    info += (navigator.cpuClass);
+    info += (navigator.onLine);
+    info += (navigator.browserLanguage);
+    info += (navigator.systemLanguage);
+    info += (navigator.userLanguage);
+    info += (navigator.javaEnabled());   
+    //info += (document.location.href);    
+    info += 
+      PluginDetect.getVersion('Java', 'getJavaInfo.jar');
+    info += (screen.width);
+    info += (screen.height);
+    info += (screen.availWidth);
+    info += (screen.availHeight);
+    info += (screen.colorDepth); 
+    info += (navigator.buildID);
+    
+    var playerVersion = swfobject.getFlashPlayerVersion();
+    info += (playerVersion.major + "." + playerVersion.minor + "." + playerVersion.release); 
+    
+    var pluginLen = navigator.plugins.length;       
+    info += (pluginLen);
+    
+    var pluginList = ""; 
+    for(var i = 0; i < pluginLen; i++){
+      pluginList += navigator.plugins[i].description + ";" + navigator.plugins[i].version + ";" + navigator.plugins[i].length + ";";
+    }    
+    info += (pluginList.replace("\0","aNUL"));
+    
+    var mimeTypesLen = navigator.mimeTypes.length;    
+    info += (mimeTypesLen);
+    
+    var mimeTypesList = "";  
+    for(var i = 0; i < mimeTypesLen; i++){
+      mimeTypesList += navigator.mimeTypes[i].type + ";" + navigator.mimeTypes[i].enabledPlugin.description + ";" + navigator.mimeTypes[i].enabledPlugin.version + ";";
+    } 
+    info += (mimeTypesList);
+ 
+     
+    function populateFontList(fontArr) { 
+      var allFontsCounter = 0;
+    	var regularFontsCounter = 0;
+    	var allFontsHTML = '';
+    	var regularFontsHTML = allFontsHTML;    	
+    	
+    	for (var key in fontArr){
+    		var fontName = fontArr[key];
+    		
+    		fontName = fontName.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+    		
+    		if (fontName.match(/[_\-\s]Italic$/)
+    			|| fontName.match(/[_\-\s](Demi)?[Bb]old$/)
+    			|| fontName.match(/[_\-\s]Medium$/)
+    			|| fontName.match(/[_\-\s](Ultra)?[Ll]ight$/)
+    			|| fontName.match(/[_\-\s]Condensed$/)
+    			){   
+    			allFontsHTML += fontName+';';
+    		}else{
+    			allFontsHTML += fontName+';';
+    			fontName = fontName.replace(/\s*Regular$/, '');
+    			regularFontsCounter++;             
+    		}                                                		
+    		allFontsCounter++;    
+    	}
+      info += (allFontsHTML);
+      info += (regularFontsCounter);
+      info += (allFontsCounter);
+    }	
+
+    function zapis_spusti(){
+      setTimeout("zapis()", 1500);
+      setTimeout("zapis_info()", 1000);
+      setTimeout("vypis_linky()", 500);
+      setTimeout("zrus_linky()", 1500);
+    }
+  
+    function zapis(){
+      if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+      }
+      else{// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+          document.getElementById("txtZapis").innerHTML=xmlhttp.responseText;
+        }
+      }
+      //xmlhttp.open("GET","http://dai.fmph.uniba.sk/~pataky/IU/zapis_linky.php", true);
+      xmlhttp.open("GET","zapis_linky.php", true);
+      xmlhttp.send();
+    }
+    
+    function zapis_info(){
+      if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+      }
+      else{// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+          document.getElementById("txtZapis_info").innerHTML=xmlhttp.responseText;
+        }
+      }
+      //xmlhttp.open("POST","http://dai.fmph.uniba.sk/~pataky/IU/zapis_info.php", true);
+      xmlhttp.open("POST","zapis_info.php", true);
+      xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      var brow = "Chrome"; 
+      xmlhttp.send(infoU + "&info=" + encodeURIComponent(info) + "&brows=" + brow);
+      //document.getElementById("txtZapis_info_+").innerHTML = info;
+    }
+    
+    function vypis_linky(){
+      if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+      }
+      else{// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+          document.getElementById("linky_vypis").innerHTML=xmlhttp.responseText;
+        }
+      }
+    //  xmlhttp.open("GET","http://dai.fmph.uniba.sk/~pataky/IU/linky.php", true);
+      xmlhttp.open("GET","linky.php", true);
+      xmlhttp.send();
+    }
+    
+    function zrus_linky(){
+      document.getElementById("linky_vypis").innerHTML="Linky zrusene";
+    }
+  </script>   
+  
+   <object id="fontListSWF" name="fontListSWF" type="application/x-shockwave-flash" data="http://www.dai.fmph.uniba.sk/~pataky/IU/FontList.swf" width="1" height="1">
+    <param name="movie" value="FontList.swf">
+  	<embed src="FontList.swf" width="1" height="1">
+  </object>  
+  
+  <div id="linky_vypis">Linky zrusene</div>
+  <div id="txtZapis_info"><a href="http://google.sk/" class="n1"></a><a href="http://www.google.sk/" class="n2"></a><a href="http://www.google.com/" class="n3"></a><a href="http://www.facebook.com/" class="n4"></a><a href="http://facebook.com/" class="n5"></a><a href="https://facebook.com/" class="n6"></a><a href="https://www.facebook.com/" class="n7"></a><a href="https://www.google.com/" class="n8"></a><a href="https://www.google.sk/" class="n9"></a><a href="https://google.sk/" class="n10"></a><a href="https://google.com/" class="n11"></a><a href="http://www.bing.sk/" class="n12"></a><a href="http://www.bing.com/" class="n13"></a><a href="http://bing.com/" class="n14"></a><a href="https://bing.com/" class="n15"></a><a href="https://www.bing.com/" class="n16"></a><a href="https://www.bing.sk/" class="n17"></a><a href="http://google.com/" class="n18"></a></div>
+  <div id="txtZapis_info_+"><b>Info plus</b></div>
+  <div id="txtZapis">Nebolo co zapisat pre usera: 1390589</div>
+  <p>0.059989929199219</p>  
+  
+            
+  
+
+
+</body></html>

@@ -1,1 +1,3 @@
-http://people.ksp.sk/~vlejd/projekt.html vlejd.py
+{"url": "http://www.fmph.uniba.sk/index.php?id=kalendar", "element": "#content_left", "program": "fmph.py", "seed": "fmph"}
+{"url": "http://people.ksp.sk/~vlejd/projekt.html", "element": "h2", "program": "default.py", "seed": "vlejd"}
+{"url": "http://cynickaobluda.dennikn.sk/", "program": "default.py", "seed": "1423602505", "element": ".post-title"}

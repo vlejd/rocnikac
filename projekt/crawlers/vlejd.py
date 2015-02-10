@@ -1,6 +1,5 @@
 execfile("lib.py")
-url= """http://people.ksp.sk/~vlejd/projekt.html"""
-
-soup = BeautifulSoup(get_url(url))
+url = sys.argv[1]
+soup = BeautifulSoup(get_html(url))
 print soup.select('div')
 print "vlejd"

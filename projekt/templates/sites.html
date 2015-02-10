@@ -1,0 +1,44 @@
+<head>
+    <meta charset="utf-8">
+    <title>Rocnikac</title>
+    <meta property="og:title" content="SciCurve - Understand your Field of Research." />
+</head>
+<body>
+<a href ="/"> spat </a> <br>
+
+itemy ktorej stranky si chcete pozriet?
+<table border="1">
+<tr> 
+    <td>
+    Stránka
+    </td>
+    <td>
+    Extrahovátko
+    </td>
+    <td>
+    Elemnty
+    </td>
+    
+</tr>
+{% for d in data %}
+<tr> 
+    <td>
+    <a href="/site/{{d.seed}}">
+    {{d.url}}
+    </a>
+    </td>
+    <td>
+    {{d.program}}
+    </td>
+    <td>
+    {{d.element}}
+    </td>
+    
+</tr>
+{% endfor %}
+
+</table>
+
+
+
+</body>

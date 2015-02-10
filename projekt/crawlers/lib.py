@@ -3,12 +3,37 @@ from bs4 import BeautifulSoup
 import requests
 import pprint
 import sys,os
+import re
+import subprocess
 import time
+import json
+import sys
 reload(sys)  
 sys.setdefaultencoding('utf8')
 
+def tmplt():
+  pom = {}
+  pom['kto']=None
+  pom['co']=None
+  pom['kedy']=None
+  pom['okolkej']=None
+  pom['kde']=None
+  pom['url']=None
+  pom['popis']=None
+  pom['raw']=None
+  pom['extractor'] = None
+  return pom
 
-def get_url(koho):
+def code(x):
+  return URLEncoder.encode(url, "UTF-8");
+
+def getlinefromlist(x):
+  f = open("list",'r')
+  js = json.loads(f.read().split('\n')[int(x)])
+  f.close()
+  return js
+
+def get_html(koho):
   r = requests.get(koho)
   return r.text
 
