@@ -53,11 +53,23 @@ def site(seed = None):
     f = open("crawlers/jsons/"+seed,'r')
     d = json.load(f)
     f.close()
-    
+    for x in data:
+      data['raw'] = data['raw'].prettify()
     return render_template('site.html',data=d, notraw = d[0]['extractor']['program']!= 'default.py')
   
   else:
     return "neexistuje"
+
+
+
+
+@app.route('/status')
+def status():
+  ll = open("crawlers/log","r")
+  d = ll.read()
+  ll.close()
+  return render_template('status.html',data=d.split("\n"));
+
 
 @app.route('/api/add',methods=['POST'])
 def api_add():    
