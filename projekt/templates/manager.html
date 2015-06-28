@@ -20,6 +20,17 @@ objekty ktoré majú class=item). Selektory sa dajú písať aj pomerne kompliko
     <input type="submit" value="Pridať" />
 </form>
 
+<form action="/api/picker" method="POST">
+    <p> Ak nepoznate selektroy, pouzite picker, ale moze to chvilu trvat </p>
+    <p> staci kliknut na element ktory chcete trackovat (dostane cerveny okraj)
+      pre vseobecnejsie stlacte +
+      pre krok spat stalcte -
+      pre potvrdenie stlacte enter
+    </p>
+    <input type="text" name="site"> Url stranky</input>
+    <input type="submit" value="Pridať" />
+</form>
+
 
 Trackované stránky (ak ste adli a nic sa nezmenilo, nico sa pokazilo):
 <table border="1">
