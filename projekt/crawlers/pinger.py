@@ -49,12 +49,6 @@ def main():
           pass
       #trosku si otdychni
       
-      print "sleep"
-      time.sleep(1000) #debug
-      print "end of sleep"
-      ll = open("log","a")
-      ll.write(str(datetime.datetime.now())+"\n")
-      ll.close()
     except:
       s = traceback.print_exc()
       print s
@@ -62,6 +56,12 @@ def main():
       ll.write(str(datetime.datetime.now())+" "+str(s)+"\n")
       ll.close()
       
+    print "sleep"
+    time.sleep(1000) #debug
+    print "end of sleep"
+    ll = open("log","a")
+    ll.write(str(datetime.datetime.now())+"\n")
+    ll.close()
     #time.sleep(60*60*24)
 
 if __name__ == '__main__':

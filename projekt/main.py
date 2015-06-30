@@ -172,10 +172,11 @@ while($(som.parent()).length!=0){
       tagname= tagname+":nth-of-type("+kolko+")";
     }
   }
-  selector = tagname+" "+selector;
+  selector = tagname+\"""" +' > '+ """\"+selector;
   som = par;
 }
-return selector;
+var pom = selector;
+return selector.substring(0,pom.length-6);
 }
 
 document.onkeydown = function(e){
@@ -260,7 +261,7 @@ def picked():
     site = form['site']
     element = 'body'
     if len(form['element'])>1:
-        element = form['element']
+        element = form['element'].replace("&gt;",">")
   
   try:
     tim = time.time()
@@ -288,5 +289,5 @@ def ping():
   return str(data)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5000)
+    app.run(host='0.0.0.0',port=5001)
 
